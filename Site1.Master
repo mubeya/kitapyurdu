@@ -1,0 +1,160 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site1.master.cs" Inherits="eTicaretSayfasi.Site1" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title></title>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+    <style type="text/css">
+        .dvUrun
+        {
+            border: 2px dotted Red;
+            text-align: center;
+            padding: 5px;
+            margin:5px;
+            color:Black;
+            background-color:White;
+        }
+        .dvUrun:hover
+        {
+            background-color:White;
+        }    
+
+        img
+        {
+            width:150px;
+            height:150px;
+            
+        }
+        
+        #wrapper
+        {
+            width:1231px;
+            height: 213px;
+        }
+    
+        #menu
+        {
+            float:left;
+            width:631px;
+            height: 129px;
+            margin-left: 138px;
+            margin-top: 60px;
+        }
+         #content
+        {
+            float:left;
+            width:763px;
+            height: 192px;
+        }
+        
+        a
+        {
+            color:Black;
+        }
+        a:hover
+        {
+            color:Orange;
+            
+        }
+        #ilkbaslik
+        {
+            width: 117px;
+            margin-top: 0px;
+        }
+        
+   
+        #active
+        {
+            width: 139px;
+        }
+        
+   
+    </style>
+</head>
+<body>
+    <form id="form1" runat="server">
+    <div id="wrapper">
+        <div id=menu>
+        &nbsp;<asp:Image ID="Image1" runat="server" Height="120px" Width="553px" 
+            style="margin-left: 0px; margin-top: 0px;" ImageUrl="~/ky_header_logo.gif" />
+        <br />
+ 
+        <br />
+        <br />
+ 
+            <asp:DataList ID="DataList1" runat="server" BackColor="White" Font-Size="Medium" 
+            Font-Underline="False" Height="53px" RepeatDirection="Horizontal" 
+            style="margin-left: 138px; margin-top: 0px" Width="808px" 
+                onselectedindexchanged="DataList1_SelectedIndexChanged" 
+                onitemcommand="DataList1_ItemCommand">
+                    <ItemTemplate>
+                       <asp:Button ID="Button2" runat="server" Text='<%#Eval("KategoriAd") %>' CommandName='<%#Eval("KategoriAd") %>' CommandArgument='<%#Eval("KategoriID")%>' />
+                    </ItemTemplate>
+                    <SeparatorTemplate>
+                        <br />
+                    </SeparatorTemplate>
+                </asp:DataList>
+
+            <br />
+&nbsp;&nbsp;
+
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                    
+                <p style="height: 92px; width: 748px; margin-left: 190px">
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+                    &nbsp;</p>
+                    
+    
+
+                </asp:ContentPlaceHolder>
+        
+                <br />
+                <br />
+        </div>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<asp:Panel ID="Panel1" 
+            runat="server" style="margin-left: 870px" Height="16px" Width="542px">
+            <asp:LinkButton ID="LinkButton1" runat="server" onclick="LinkButton1_Click">Profilim</asp:LinkButton>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <asp:LinkButton ID="LinkButton2" runat="server" onclick="LinkButton2_Click">Çıkış Yap</asp:LinkButton>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            
+           
+        </asp:Panel>
+        <br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <asp:Panel ID="Panel2" runat="server" style="margin-left: 871px">
+            <asp:LinkButton ID="LinkButton3" runat="server" onclick="LinkButton3_Click">Giriş Yap</asp:LinkButton>
+        </asp:Panel>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <br />
+        <br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+        <br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Site İçi Arama&nbsp;&nbsp;
+        <asp:TextBox ID="TextBox1" runat="server" Height="28px" Width="170px"></asp:TextBox>
+&nbsp;&nbsp;&nbsp;
+        <asp:Button ID="Button1" runat="server" Text="Ara" onclick="Button1_Click" 
+            Width="47px" />
+    </div>
+    <div>
+    </div>
+
+    <div class="sagkutu">
+       <br />
+                <ul>
+                <li id="active"><a href="Urunler.aspx">Ana Sayfa</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </li>
+                <li style="width: 148px"><a href="hakkimizda.aspx">Hakkımızda</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </li>
+                <li style="width: 75px"><a href="iletisim.aspx">İletişim</a>&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </li>
+        
+                </ul>     
+
+        </div>
+    <p>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    </p>
+    </form>
+    </body>
+</html>
